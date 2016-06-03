@@ -19,10 +19,10 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var movieDescriptionOutlet: UILabel!
 
     
+    var movies = Movie?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-    }
-
+      
+        }
 }

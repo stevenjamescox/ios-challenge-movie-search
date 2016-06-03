@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieListTableViewController: UITableViewController {
+class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
     
     var movies: [Movie] = []
 
@@ -19,7 +19,6 @@ class MovieListTableViewController: UITableViewController {
                 MovieController.sharedController.movies = movies
                 self.tableView.reloadData()
             })
-
     }
 
     }

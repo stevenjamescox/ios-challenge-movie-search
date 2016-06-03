@@ -14,6 +14,8 @@ class MovieController {
     
     static let sharedController = MovieController()
     
+    static let keyResults = "results"
+    
     let baseUrl = NSURL(string: "https://api.themoviedb.org/3/movie/")
     
     static let keyForAPI = "?api_key=f83783c7c1e09d03fe09770bc9c4bf57"
@@ -27,7 +29,7 @@ class MovieController {
     NetworkController.performRequestForURL(unwrappedURL, httpMethod: .Get) { (data, error) in
         guard let data = data,
         jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)),
-        resultsArray = jsonDictionary["results"] as? [JSON]
+        resultsArray = jsonDictionary[keyResults] as? [JSON]
             else {
                 completion(movies: [])
                 return
