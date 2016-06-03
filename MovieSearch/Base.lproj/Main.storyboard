@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Movie List Table View Controller-->
         <scene sceneID="Na3-Xj-nLl">
             <objects>
-                <tableViewController id="CKX-Lx-LY2" sceneMemberID="viewController">
+                <tableViewController id="CKX-Lx-LY2" customClass="MovieListTableViewController" customModule="MovieSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bh1-pS-c1l">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="1183" y="437"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Detail View Controller-->
         <scene sceneID="Klg-Oa-nZo">
             <objects>
-                <viewController id="NoZ-sJ-fEU" sceneMemberID="viewController">
+                <viewController id="NoZ-sJ-fEU" customClass="MovieDetailViewController" customModule="MovieSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="33K-ma-l0D"/>
                         <viewControllerLayoutGuide type="bottom" id="AEC-oA-GgY"/>
