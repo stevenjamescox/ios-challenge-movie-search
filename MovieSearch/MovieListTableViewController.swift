@@ -12,6 +12,8 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
     
     var movies: [Movie] = []
 
+    @IBOutlet weak var movieSearchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         MovieController.sharedController.getMovies { (movies) in
@@ -22,6 +24,18 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     }
+    
+    func searchBar(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        let searchEntry = searchBar.text ?? ""
+        //gotta create search function in MovieController
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+            }   )
+        }
+
+
+    
     // MARK: - Table view data source
 
 

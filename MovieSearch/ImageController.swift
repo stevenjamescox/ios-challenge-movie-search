@@ -15,9 +15,9 @@ class ImageController {
     
     static func imageForUrl(urlString: String, completion: (image: UIImage?) -> Void) {
         let imageURLString = ImageController.baseURL + imageForUrl
-        guard let url = NSURL(string: urlString) else {
+        if let url = NSURL(string: urlString){ else {
             NetworkController.performRequestForURL(url, httpMethod: .Get) { (data, error) in
-                guard let data = data else {
+                if let data = data else {
                 completion(image: nil)
                     return
                 }
