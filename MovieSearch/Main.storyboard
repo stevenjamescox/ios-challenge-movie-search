@@ -17,10 +17,10 @@
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="search for a film" id="Q2O-7e-HEp">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="350" id="NGd-wN-uW2" customClass="CustomTableViewCell" customModule="MovieSearch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="350" id="NGd-wN-uW2" customClass="CustomTableViewCell" customModule="MovieSearch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="600" height="350"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NGd-wN-uW2" id="b9X-o8-jVm">
@@ -103,14 +103,23 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="ieS-8p-iX5" secondAttribute="bottom" id="R22-0R-rxo"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avgRatingLabel" destination="4bi-09-FcW" id="W0o-qN-8IX"/>
+                                    <outlet property="posterImageView" destination="wBh-SH-sd4" id="4f1-aI-UGs"/>
+                                    <outlet property="synopsisLabel" destination="3BX-Xe-X5a" id="Vag-L1-dYY"/>
+                                    <outlet property="titleLabel" destination="FNi-mj-pk6" id="Qjp-hR-S4t"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="B7K-IJ-pSh" id="Hzh-2l-OrZ"/>
-                            <outlet property="delegate" destination="B7K-IJ-pSh" id="bXN-JB-4Ho"/>
+                            <outlet property="dataSource" destination="B7K-IJ-pSh" id="41U-9p-QR8"/>
+                            <outlet property="delegate" destination="B7K-IJ-pSh" id="gYL-OB-hqX"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Movie Search" id="tbB-b8-mVi"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Q2O-7e-HEp" id="kHV-Jm-r3Y"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="it7-2D-M2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

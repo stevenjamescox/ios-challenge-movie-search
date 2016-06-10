@@ -12,18 +12,18 @@ class MovieController {
     
     static let sharedController = MovieController()
     
-    var movies: [Movie] = []
-    
     //combined URL for my sanity: https://api.themoviedb.org/3/search/movie?api_key=f83783c7c1e09d03fe09770bc9c4bf57&query= (then inquiry entered by user in searchbar)
     
     static let baseURL = NSURL(string: "http://api.themoviedb.org/3/search/movie") ?? NSURL()
     
     static let apiKey = "f83783c7c1e09d03fe09770bc9c4bf57"
     
+    var movies: [Movie] = []
+    
     static func fetchMovies(searchEntry: String, completion: (movies: [Movie]) -> Void) {
         
-        let parameters: STRINGDICT =
-            ["api_key" : apiKey, "query" : searchEntry.lowercaseString]
+        let parameters: [String: String] =
+            ["api_key":apiKey, "query":searchEntry.lowercaseString]
         
         NetworkController.performReq(baseURL, httpMethod: .Get, urlParameters: parameters, body: nil) { (data, error) in
             

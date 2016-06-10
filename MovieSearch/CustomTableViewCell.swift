@@ -9,16 +9,35 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-
+    
+    var movie: Movie?
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var avgRatingLabel: UILabel!
+    @IBOutlet weak var synopsisLabel: UILabel!
+    @IBOutlet weak var posterImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
+    
+    func loadCellContents(movie: Movie) {
+        
+        self.movie = movie
+        
+        titleLabel.text = movie.title
+        avgRatingLabel.text = "Avg Rating: \(movie.voteAverage) out of 10"
+        synopsisLabel.text = "Synposis: \(movie.overview)"
+        
+        posterImageView.image = UIImage()
+        ImageController.fetchImage(movie.posterPathURL) {(image) in
+           
+            dispatch_async(dispatch_get_main_queue(),
+            { self.posterImageView.image = image })
+        }
+    }
 }
