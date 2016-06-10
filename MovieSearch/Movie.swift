@@ -32,7 +32,9 @@ struct Movie {
               let voteAverage = json[kAvg] as? Double,
               let posterPathURLStr = json[kPosterPath] as? String,
               let posterPathURL = NSURL(string:"http://image.tmdb.org/t/p/w500/\(posterPathURLStr)") else
+            
             { return nil }
+        
         self.identifier = identifier
         self.title = title
         self.overview = overview
