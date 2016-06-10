@@ -39,7 +39,7 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="CQV-lB-63N"/>
                                                         <constraint firstAttribute="height" constant="40" id="kcn-yZ-J1C"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -54,7 +54,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BX-Xe-X5a">
                                                                     <rect key="frame" x="0.0" y="0.0" width="290" height="263"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -64,7 +64,7 @@
                                                                         <constraint firstAttribute="height" constant="22" id="A5s-SX-qSC"/>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="KYa-4C-2FV"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
