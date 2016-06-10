@@ -20,10 +20,10 @@ class MovieController {
     
     var movies: [Movie] = []
     
-    static func fetchMovies(searchEntry: String, completion: (movies: [Movie]) -> Void) {
+    static func fetchMovies(searchText: String, completion: (movies: [Movie]) -> Void) {
         
         let parameters: [String: String] =
-            ["api_key":apiKey, "query":searchEntry.lowercaseString]
+            ["api_key":apiKey, "query":searchText.lowercaseString]
         
         NetworkController.performReq(baseURL, httpMethod: .Get, urlParameters: parameters, body: nil) { (data, error) in
             

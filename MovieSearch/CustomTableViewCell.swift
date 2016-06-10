@@ -17,14 +17,6 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var synopsisLabel: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     func loadCellContents(movie: Movie) {
         
         self.movie = movie

@@ -8,8 +8,6 @@
 
 import Foundation
 
-typealias STRINGDICT = [String: String]
-
 class NetworkController {
     
     enum HTTPMethod: String {
@@ -20,7 +18,7 @@ class NetworkController {
         case Patch = "PATCH"
     }
     
-    static func performReq(url: NSURL, httpMethod: HTTPMethod, urlParameters: STRINGDICT? = nil, body: NSData? = nil, completion: ((data: NSData?, error: NSError?) -> Void)?) {
+    static func performReq(url: NSURL, httpMethod: HTTPMethod, urlParameters: [String: String]? = nil, body: NSData? = nil, completion: ((data: NSData?, error: NSError?) -> Void)?) {
         
         let reqURL = urlFromParameters(url, urlParameters: urlParameters)
         
@@ -30,15 +28,15 @@ class NetworkController {
         
         let session = NSURLSession.sharedSession()
         
-        let task = session.dataTaskWithRequest(req) { (data, response, error) in
+        let dataTask = session.dataTaskWithRequest(req) { (data, response, error) in
             if let completion = completion {
                 completion(data: data, error: error)
             }
         }
-        task.resume()
+        dataTask.resume()
     }
     
-    static func urlFromParameters(url: NSURL, urlParameters: STRINGDICT?) -> NSURL{
+    static func urlFromParameters(url: NSURL, urlParameters: [String: String]?) -> NSURL{
         
         let components = NSURLComponents(URL: url, resolvingAgainstBaseURL: true)
         
